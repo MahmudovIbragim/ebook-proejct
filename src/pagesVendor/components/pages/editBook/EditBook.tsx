@@ -320,9 +320,9 @@ const EditBook = () => {
 		const file = e.target.files ? e.target.files[0] : null;
 		const result = await postFile(file!);
 		if ('data' in result) {
-			if (result.data!.httpStatus === 'OK') {
-				setFirstPhoto(result.data.message);
-				setNewPhoto(result.data.message);
+			if (result.data?.httpStatus === 'OK') {
+				setFirstPhoto(result.data?.message);
+				setNewPhoto(result.data?.message);
 			}
 		}
 	};
@@ -331,8 +331,8 @@ const EditBook = () => {
 		const file = e.target.files ? e.target.files[0] : null;
 		const result = await postFile(file!);
 		if ('data' in result) {
-			if (result.data!.httpStatus === 'OK') {
-				setSecondPhoto(result.data!.message);
+			if (result.data?.httpStatus === 'OK') {
+				setSecondPhoto(result.data?.message);
 				setSecondNewPhoto(result.data?.message);
 			}
 		}
@@ -355,8 +355,8 @@ const EditBook = () => {
 	const handleAudioFragmetChange = async (e: File) => {
 		const result = await postFile(e);
 		if ('data' in result) {
-			if (result.data!.httpStatus === 'OK') {
-				setFragmentNewAudioFile(result.data.message);
+			if (result.data?.httpStatus === 'OK') {
+				setFragmentNewAudioFile(result.data?.message);
 				setIsFileUploadedFragment(true);
 			}
 		}
@@ -365,7 +365,7 @@ const EditBook = () => {
 	const handleAudioChange = async (e: File) => {
 		const result = await postFile(e);
 		if ('data' in result) {
-			if (result.data!.httpStatus === 'OK') {
+			if (result.data?.httpStatus === 'OK') {
 				setNewAudioFile(result.data.message);
 				setIsFileUploaded(true);
 			}
