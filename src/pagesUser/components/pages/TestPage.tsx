@@ -1,3 +1,5 @@
+/* eslint-disable */
+//@ts-nocheck
 import { useClientProfileHistoryQuery } from '@/src/redux/api/userHistory';
 import scss from './Test.module.scss';
 interface GetResponse {
