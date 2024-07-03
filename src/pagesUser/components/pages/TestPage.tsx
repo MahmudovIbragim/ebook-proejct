@@ -16,7 +16,7 @@ interface UserHistory {
 	price: number;
 	priceWithDiscount: number;
 	createdAt: string;
-	urlFile: string | null;
+	urlFile: string | null | undefined;
 	bookType: string;
 }
 const TestPage = () => {

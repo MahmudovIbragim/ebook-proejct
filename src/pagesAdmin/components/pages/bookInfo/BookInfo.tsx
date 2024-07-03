@@ -96,7 +96,7 @@ const BookInfo: FC = () => {
 		const result = await rejectBook({ newData, id });
 		console.log(result);
 		if ('data' in result) {
-			if (result.data.httpStatus === 'OK') {
+			if (result.data?.httpStatus === 'OK') {
 				setModalSuccess(true);
 				setRejectedMessage(result.data.message);
 				setTimeout(() => {

@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 namespace PAYMENT {
 	type CreatePaymentResponse = {
-		data: {
+		data?: {
 			httpStatus: string;
 			message: string;
 		};
 		status: number;
-		error: {
+		error?: {
 			status: number;
-			data: {
+			data?: {
 				message: string;
 			};
 		};

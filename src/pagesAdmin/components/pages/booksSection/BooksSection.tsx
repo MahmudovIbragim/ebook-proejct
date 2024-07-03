@@ -137,7 +137,7 @@ const BooksSection: React.FC = () => {
 				handlePostRequest();
 			}
 		}
-		if (result.error.data) {
+		if (result.error?.data) {
 			messageApi.open({
 				type: 'warning',
 				content: result.error.data.message

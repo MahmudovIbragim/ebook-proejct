@@ -117,7 +117,7 @@ const BasketPage = () => {
 		if (response.error) {
 			messageApi.open({
 				type: 'warning',
-				content: response.error.data.message
+				content: response.error.data?.message
 			});
 		}
 	};

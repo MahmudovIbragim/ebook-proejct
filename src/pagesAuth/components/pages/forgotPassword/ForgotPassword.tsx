@@ -35,7 +35,7 @@ const ForgotPassword = () => {
 				if (result.error.status === 404) {
 					messageApi.open({
 						type: 'warning',
-						content: result.error.data.message
+						content: result.error?.data?.message
 					});
 				} else {
 					messageApi.open({

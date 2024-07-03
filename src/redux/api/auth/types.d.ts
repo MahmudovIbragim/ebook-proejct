@@ -91,13 +91,13 @@ namespace AUTHORIZATION {
 	};
 
 	type SendEmailResponse = {
-		data: {
+		data?: {
 			httpStatus: string;
 			message: string;
 		};
 		status: number;
 		error?: {
-			data: {
+			data?: {
 				message: string;
 			};
 			status: number;

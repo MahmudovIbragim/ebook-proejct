@@ -72,7 +72,7 @@ const PaymentForm: FC<TypeProps> = ({
 				setSuccsessModal(true);
 			}
 		}
-		if (result.error.data) {
+		if (result.error?.data) {
 			console.log(result.error.data);
 			message.open({
 				type: 'warning',

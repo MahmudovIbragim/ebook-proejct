@@ -60,7 +60,7 @@ namespace BASKET {
 	};
 
 	type ActivedPromoResponse = {
-		data: {
+		data?: {
 			numberOfBooks: number;
 			price: number;
 			numberOfBooksDisCount: number;
@@ -70,10 +70,10 @@ namespace BASKET {
 			bookId: number;
 			getPromoCode: string;
 		};
-		status: number;
-		error: {
+		status?: number;
+		error?: {
 			status: number;
-			data: {
+			data?: {   
 				message: string;
 			};
 		};

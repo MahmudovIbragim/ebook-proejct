@@ -68,7 +68,7 @@ const AboutBook = () => {
 				}
 			}
 		}
-		if (result.error.data) {
+		if (result.error?.data) {
 			messageApi.open({
 				type: 'warning',
 				content: result.error.data.message
@@ -83,7 +83,7 @@ const AboutBook = () => {
 		const result = await rejectBook({ newData, id });
 		console.log(result);
 		if ('data' in result) {
-			if (result.data.httpStatus === 'OK') {
+			if (result.data?.httpStatus === 'OK') {
 				setRejectedMessage(result.data.message);
 				setTimeout(() => {
 					navigate('/admin/books');

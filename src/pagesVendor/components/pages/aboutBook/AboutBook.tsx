@@ -117,8 +117,6 @@ const AboutBook = () => {
 		}
 	];
 
-
-
 	return (
 		<section className={scss.AboutBook}>
 			<div className="container">
