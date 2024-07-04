@@ -40,11 +40,15 @@ const ProfileClient: React.FC = () => {
 	}, [tokenAuth]);
 
 	const handleDeleteAndNavigate = async () => {
-		try {
-			await handleDeleteProfile();
+		const result = await handleDeleteProfile();
+		if ('data' in result) {
+			localStorage.removeItem('token');
+			localStorage.setItem('client', 'false');
+			localStorage.setItem('vendor', 'false');
+			localStorage.setItem('admin', 'false');
+			localStorage.removeItem('NameClient');
+			localStorage.removeItem('EBOOK');
 			navigate('/auth/login');
-		} catch (error) {
-			console.error('Error deleting profile:', error);
 		}
 	};
 

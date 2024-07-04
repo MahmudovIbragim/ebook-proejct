@@ -331,7 +331,7 @@ const BookAddSection = () => {
 		<section className={scss.AddBookSection}>
 			<div className={scss.container}>
 				{contextHolder}
-				<form onSubmit={handleSubmit(onSubmit)} className={scss.content}>
+				<div className={scss.content}>
 					<div className={scss.links}>
 						<Link
 							to={'/admin/books'}
@@ -404,7 +404,10 @@ const BookAddSection = () => {
 							</div>
 						</div>
 					</div>
-					<div className={scss.inputs_container}>
+					<form
+						onSubmit={handleSubmit(onSubmit)}
+						className={scss.inputs_container}
+					>
 						<div className={scss.type_book}>
 							<p>Тип</p>
 							<div className={scss.types}>
@@ -676,7 +679,7 @@ const BookAddSection = () => {
 														type="text"
 														{...register('volume', {
 															required: true,
-															minLength: 4,
+															minLength: 3,
 															validate: (value) =>
 																!isNaN(value) || 'Введите только числа'
 														})}
@@ -1281,7 +1284,7 @@ const BookAddSection = () => {
 															minLength={2}
 															{...register('volume', {
 																required: true,
-																minLength: 4,
+																minLength: 3,
 																validate: (value) =>
 																	!isNaN(value) || 'Введите только числа'
 															})}
@@ -1384,8 +1387,8 @@ const BookAddSection = () => {
 								</div>
 							</Modal>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</section>
 	);

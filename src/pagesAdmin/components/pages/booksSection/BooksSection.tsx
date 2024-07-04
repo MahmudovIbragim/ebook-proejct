@@ -36,6 +36,7 @@ const BooksSection: React.FC = () => {
 	const [deleteBookById] = useDeleteBookMutation();
 	const [deleteModal, setDeleteModal] = useState(false);
 	const [messageApi, context] = message.useMessage();
+	const [bookId, setBookId] = useState<number | null>(null);
 
 	const bookType = [
 		{
@@ -358,11 +359,20 @@ const BooksSection: React.FC = () => {
 										className={scss.extra}
 										onClick={() => {
 											setOpenState(!openState);
+											setBookId(book.bookId);
 										}}
 									>
 										<ThreeDotIcon />
 									</div>
-									<div className={openState ? scss.is_open : scss.on_close}>
+									<div
+										className={
+											book.bookId === bookId
+												? openState
+													? scss.is_open
+													: scss.on_close
+												: scss.on_close
+										}
+									>
 										<ul>
 											<li
 												onClick={() => {

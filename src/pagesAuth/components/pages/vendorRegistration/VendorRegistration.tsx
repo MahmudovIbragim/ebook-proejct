@@ -105,28 +105,31 @@ const VendorRegistration = () => {
 				email: email,
 				code: valueCode
 			};
-			const response = await confirmEmail(newData);
+			const response = (await confirmEmail(
+				newData
+			)) as AUTHORIZATION.ConfirmEmailResponse;
 
 			if ('data' in response) {
-				const token = response.data?.data?.token;
+				const token = response.data?.token;
+				console.log(token);
+
 				localStorage.setItem('token', token!);
 				localStorage.setItem('client', 'false');
 				localStorage.setItem('vendor', 'true');
 				localStorage.setItem('admin', 'false');
-				navigate('/vendor/home');
-				console.log(response.data?.data);
-
+				console.log(response.data);
 				localStorage.setItem(
 					'EBOOK',
 					JSON.stringify({
 						email: email,
-						firstName: response.data?.data?.firstName,
+						firstName: response.data?.firstName,
 						id: 4,
 						role: 'VENDOR',
-						token: response.data?.data?.token
+						token: response.data?.token
 					})
 				);
 				setValueCode('');
+				navigate('/vendor/home');
 			}
 			if (error) {
 				const responseError = error as AUTHORIZATION.ConfirmEmailError;

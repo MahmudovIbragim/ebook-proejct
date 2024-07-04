@@ -122,14 +122,6 @@ const Login = () => {
 							</button>
 						</div>
 					</form>
-					<button
-						className={scss.forgot_password}
-						onClick={() => {
-							navigate('/auth/forgot-password');
-						}}
-					>
-						Забыли пароль ?
-					</button>
 				</div>
 			</div>
 		</div>

@@ -31,7 +31,7 @@ const AboutVendorsBooks = () => {
 		vendorId: vendorId,
 		operationType: operationType,
 		page: 1,
-		pageSize: 100
+		pageSize: 20
 	});
 
 	const [deleteVendorProfile] = useDeleteVendorProfileMutation();
@@ -59,9 +59,8 @@ const AboutVendorsBooks = () => {
 		const filter = filterBooks.find((item) => item.label === operationType);
 		return filter ? filter.type : 'Все';
 	};
-
 	const filteredBooks = operationType
-		? data?.filter((book) => {
+		? data?.bookResponses.filter((book) => {
 				if (operationType === 'ALL') return true;
 				if (operationType === 'IN_FAVORITE') return book.quantityOfFavorite > 0;
 				if (operationType === 'IN_BASKET') return book.quantityOfBasket > 0;
@@ -70,7 +69,7 @@ const AboutVendorsBooks = () => {
 					return book.quantityOfBasket === 0 && book.quantityOfFavorite === 0;
 				return true;
 			})
-		: data;
+		: data?.bookResponses;
 
 	const handleBookClick = (id: number) => {
 		navigate(`/admin/vendors/books/${id}`);

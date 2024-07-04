@@ -24,6 +24,11 @@ namespace BOOK {
 	};
 
 	type GetAllVendorBooksResponse = {
+		bookResponses: BooksResponse[];
+		totalBooks: number;
+	};
+
+	type BooksResponse = {
 		id: number;
 		imageLink: string;
 		bookName: string;
@@ -33,7 +38,7 @@ namespace BOOK {
 		quantityOfBasket: number;
 		discount: number;
 		priceWithDiscount: number;
-	}[];
+	};
 	type GetAllVendorBooksRequest = {
 		vendorId: number | null;
 		operationType: string;

@@ -676,7 +676,7 @@ const BookAddSection = () => {
 														type="text"
 														{...register('volume', {
 															required: true,
-															minLength: 4,
+															minLength: 3,
 															validate: (value) =>
 																!isNaN(value) || 'Введите только числа'
 														})}
@@ -1281,7 +1281,7 @@ const BookAddSection = () => {
 															minLength={2}
 															{...register('volume', {
 																required: true,
-																minLength: 4,
+																minLength: 3,
 																validate: (value) =>
 																	!isNaN(value) || 'Введите только числа'
 															})}
